@@ -1,0 +1,27 @@
+[package]
+name = "policy"
+version = "0.1.0"
+authors = ["Jung-Kwang Lee <ntoskrnl7@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+policy-derive = { path = "./policy_derive" }
+serde = { version = "1.0.126", features = ["derive"] }
+serde_json = "1.0.64"
+serde_yaml = "0.8.17"
+toml = "0.5.8"
+
+[build-dependencies]
+policy-derive = { path = "./policy_derive" }
+
+[dev-dependencies]
+policy-derive = { path = "./policy_derive" }
+
+serde = { version = "1.0.126", features = ["derive"] }
+serde_json = "1.0.64"
+serde_yaml = "0.8.17"
+toml = "0.5.8"
+
+[features]
+default = ["policy_derive"]
+policy_derive = []
