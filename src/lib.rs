@@ -6,7 +6,6 @@ pub trait Base {
     fn default() -> Self;
 }
 
-/// 정책 객체 로더
 pub trait Loader<Policy> {
     /// Create a policy object from a file.
     fn from_path<P: AsRef<std::path::Path>>(path: P) -> std::io::Result<Policy>;
@@ -22,10 +21,6 @@ pub trait Loader<Policy> {
 
     /// Create a policy object from TOML text
     fn from_toml<T: AsRef<str>>(toml: T) -> Result<Policy, toml::de::Error>;
-}
-
-pub trait Notify<Policy> {
-    fn notify(&mut self);
 }
 
 #[cfg(feature = "policy_derive")]
